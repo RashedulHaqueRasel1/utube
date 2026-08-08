@@ -12,36 +12,36 @@ export default function Footer({ lang }: FooterProps) {
   const currentT = t[lang];
 
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-logo logo-wrapper">
-          <span className="logo-icon">
+    <footer className="py-[50px] bg-bg-secondary border-t border-border-custom text-center">
+      <div className="max-w-[1200px] w-full mx-auto px-6 relative z-[1]">
+        <div className="mb-5 inline-flex items-center gap-2.5 text-xl font-extrabold text-text-primary select-none">
+          <span className="bg-gradient-to-br from-accent-red to-[#ff4b2b] w-[34px] h-[34px] rounded-[10px] flex items-center justify-center shadow-[0_0_12px_rgba(255,31,67,0.3)]">
             <Play size={18} fill="#ffffff" color="transparent" />
           </span>
-          <span>uTube<span style={{ color: 'var(--accent-red)' }}>Premium</span></span>
+          <span>uTube<span className="text-accent-red">Premium</span></span>
         </div>
-        <p className="footer-desc">
+        <p className="max-w-[460px] mx-auto mb-7 text-[0.9rem] text-text-secondary leading-relaxed">
           {currentT.footerDesc}
         </p>
         
-        <div style={{ marginBottom: '24px' }}>
-          <h4 style={{ marginBottom: '16px', fontSize: '0.85rem', letterSpacing: '0.05em', color: 'var(--text-secondary)', opacity: 0.6, textTransform: 'uppercase' }}>
+        <div className="mb-6">
+          <h4 className="mb-4 text-[0.85rem] tracking-wider text-text-secondary opacity-60 uppercase">
             {currentT.communityTitle}
           </h4>
-          <div className="footer-links">
-            <a href="#" className="nav-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+          <div className="flex justify-center gap-6 mb-7 flex-wrap">
+            <a href="#" className="text-text-secondary text-[0.95rem] font-medium transition-colors duration-200 hover:text-text-primary inline-flex items-center gap-1">
               {currentT.joinTelegram} <ExternalLink size={12} />
             </a>
-            <a href="#" className="nav-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+            <a href="#" className="text-text-secondary text-[0.95rem] font-medium transition-colors duration-200 hover:text-text-primary inline-flex items-center gap-1">
               {currentT.joinDiscord} <ExternalLink size={12} />
             </a>
-            <a href="#" className="nav-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+            <a href="#" className="text-text-secondary text-[0.95rem] font-medium transition-colors duration-200 hover:text-text-primary inline-flex items-center gap-1">
               {currentT.githubRepo} <ExternalLink size={12} />
             </a>
           </div>
         </div>
         
-        <p className="footer-disclaimer">
+        <p className="max-w-[720px] mx-auto text-[0.72rem] text-text-secondary opacity-75 leading-[1.5]">
           {currentT.footerDisclaimer}
         </p>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Download, Cpu, Sparkles, Play } from 'lucide-react';
+import { Download, Cpu, Sparkles } from 'lucide-react';
 import { t, LanguageType } from '@/utils/translations';
 
 interface HeroProps {
@@ -13,32 +13,32 @@ export default function Hero({ lang, triggerDownload }: HeroProps) {
   const currentT = t[lang];
 
   return (
-    <section className="hero-section">
-      <div className="container hero-layout">
-        <div className="hero-info">
-          <span className="badge badge-red" style={{ marginBottom: '18px' }}>
+    <section className="pt-[150px] pb-[90px] px-0 relative">
+      <div className="max-w-[1200px] w-full mx-auto px-6 relative z-[1] flex flex-col lg:flex-row items-center gap-14">
+        <div className="lg:flex-[1.2] flex-1 lg:text-left text-center">
+          <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-accent-red/8 text-accent-red border border-accent-red/15 mb-4.5">
             <Sparkles size={12} />
             {currentT.heroBadge}
           </span>
-          <h1 className="hero-title">
-            <span className="gradient-text">{currentT.heroTitleMain}</span>
+          <h1 className="text-[2.2rem] sm:text-[3rem] lg:text-[3.5rem] leading-[1.1] mb-5 tracking-[-0.03em] font-extrabold">
+            <span className="bg-gradient-to-br from-white to-text-secondary bg-clip-text text-transparent">{currentT.heroTitleMain}</span>
             <br />
-            <span className="gradient-text-accent">{currentT.heroTitleSub}</span>
+            <span className="bg-gradient-to-br from-accent-red to-[#ff8e53] bg-clip-text text-transparent">{currentT.heroTitleSub}</span>
           </h1>
-          <p className="hero-subtitle">
+          <p className="text-base sm:text-lg lg:text-[1.15rem] text-text-secondary mb-9 max-w-[580px] lg:mx-0 mx-auto font-secondary leading-relaxed">
             {currentT.heroDesc}
           </p>
           
-          <div className="hero-ctas">
+          <div className="flex gap-3.5 flex-wrap mb-11 lg:justify-start justify-center">
             <button 
-              className="btn btn-primary"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-base cursor-pointer transition-all duration-200 bg-gradient-to-br from-accent-red to-[#ff4b2b] text-white border-none shadow-[0_6px_20px_rgba(255,31,67,0.35)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(255,31,67,0.55)] active:translate-y-0"
               onClick={() => triggerDownload("uTube_Premium_v19.26.35.apk")}
             >
               <Download size={18} />
               {currentT.btnDownloadApp}
             </button>
             <button 
-              className="btn btn-secondary"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-base cursor-pointer transition-all duration-200 bg-white/[0.03] text-text-primary border border-border-custom backdrop-blur-md hover:bg-white/[0.07] hover:border-white/15 hover:-translate-y-0.5 active:translate-y-0"
               onClick={() => triggerDownload("Vanced_MicroG_v0.3.1.apk")}
             >
               <Cpu size={18} />
@@ -46,26 +46,26 @@ export default function Hero({ lang, triggerDownload }: HeroProps) {
             </button>
           </div>
           
-          <div className="hero-stats">
-            <div className="stat-item">
-              <span className="stat-val" style={{ color: 'var(--accent-red)' }}>{lang === 'en' ? '0' : '০'}</span>
-              <span className="stat-lbl">{currentT.statAdBlock}</span>
+          <div className="flex gap-9 border-t border-border-custom pt-6 lg:justify-start justify-center">
+            <div className="flex flex-col gap-1">
+              <span className="text-2xl sm:text-[1.75rem] font-extrabold text-accent-red">{lang === 'en' ? '0' : '০'}</span>
+              <span className="text-[0.8rem] text-text-secondary uppercase tracking-wider">{currentT.statAdBlock}</span>
             </div>
-            <div className="stat-item">
-              <span className="stat-val">{lang === 'en' ? '5M+' : '৫০ লাখ+'}</span>
-              <span className="stat-lbl">{currentT.statUsers}</span>
+            <div className="flex flex-col gap-1">
+              <span className="text-2xl sm:text-[1.75rem] font-extrabold text-text-primary">{lang === 'en' ? '5M+' : '৫০ লাখ+'}</span>
+              <span className="text-[0.8rem] text-text-secondary uppercase tracking-wider">{currentT.statUsers}</span>
             </div>
-            <div className="stat-item">
-              <span className="stat-val" style={{ color: 'var(--accent-blue)' }}>✓</span>
-              <span className="stat-lbl">{currentT.statSafe}</span>
+            <div className="flex flex-col gap-1">
+              <span className="text-2xl sm:text-[1.75rem] font-extrabold text-accent-blue">✓</span>
+              <span className="text-[0.8rem] text-text-secondary uppercase tracking-wider">{currentT.statSafe}</span>
             </div>
           </div>
         </div>
         
-        <div className="hero-media">
+        <div className="lg:flex-[0.8] flex-1 flex justify-center items-center relative w-full">
           {/* Optimized High-Fidelity Responsive SVG Phone Mockup */}
-          <div className="mockup-wrapper float-anim">
-            <svg viewBox="0 0 320 640" className="mockup-svg-container" style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.85))' }}>
+          <div className="w-full max-w-[320px] sm:max-w-[280px] lg:max-w-[320px] relative z-[2] mx-auto animate-float">
+            <svg viewBox="0 0 320 640" className="w-full h-auto block" style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.85))' }}>
               {/* Phone Outer Shell */}
               <rect x="6" y="6" width="308" height="628" rx="42" fill="#09090e" stroke="rgba(255,255,255,0.06)" strokeWidth="3" />
               <rect x="8" y="8" width="304" height="624" rx="40" fill="#12121c" stroke="rgba(255, 31, 67, 0.12)" strokeWidth="1" />
@@ -111,7 +111,7 @@ export default function Hero({ lang, triggerDownload }: HeroProps) {
                 
                 {/* Video title mockup */}
                 <text x="60" y="124" fill="#ffffff" fontSize="10" fontWeight="bold" fontFamily="sans-serif">Lofi Study Music - No Ads</text>
-                <text x="60" y="136" fill="var(--text-secondary)" fontSize="8" fontFamily="sans-serif">uTube Engine • Background Play</text>
+                <text x="60" y="136" fill="#94a3b8" fontSize="8" fontFamily="sans-serif">uTube Engine • Background Play</text>
                 
                 {/* Playback Controls */}
                 <circle cx="146" cy="62" r="18" fill="rgba(255, 31, 67, 0.12)" stroke="rgba(255, 31, 67, 0.25)" strokeWidth="1" />
@@ -122,7 +122,7 @@ export default function Hero({ lang, triggerDownload }: HeroProps) {
                 <rect x="16" y="145" width="170" height="3" rx="1.5" fill="#ff1f43" />
                 <circle cx="186" cy="146.5" r="4" fill="#ff1f43" />
               </g>
-
+ 
               {/* Floating "Background Play Active" Overlay */}
               <g transform="translate(26, 252)">
                 <rect width="268" height="58" rx="12" fill="rgba(10, 10, 16, 0.95)" stroke="rgba(0, 242, 254, 0.2)" strokeWidth="1" />
@@ -133,7 +133,7 @@ export default function Hero({ lang, triggerDownload }: HeroProps) {
                 <text x="50" y="25" fill="#ffffff" fontSize="10" fontWeight="bold" fontFamily="sans-serif">
                   {lang === 'en' ? "Background Play Enabled" : "ব্যাকগ্রাউন্ড প্লে সক্রিয়"}
                 </text>
-                <text x="50" y="39" fill="var(--text-secondary)" fontSize="8" fontFamily="sans-serif">
+                <text x="50" y="39" fill="#94a3b8" fontSize="8" fontFamily="sans-serif">
                   {lang === 'en' ? "Audio continues with screen locked" : "স্ক্রিন বন্ধ থাকলেও অডিও সচল"}
                 </text>
                 
@@ -145,7 +145,7 @@ export default function Hero({ lang, triggerDownload }: HeroProps) {
                   <circle cx="8" cy="8" r="4" fill="#00f2fe" />
                 </g>
               </g>
-
+ 
               {/* Shield Overlay (No Ads) */}
               <g transform="translate(26, 324)">
                 <rect width="268" height="58" rx="12" fill="rgba(10, 10, 16, 0.95)" stroke="rgba(255, 31, 67, 0.2)" strokeWidth="1" />
@@ -156,11 +156,11 @@ export default function Hero({ lang, triggerDownload }: HeroProps) {
                 <text x="50" y="25" fill="#ffffff" fontSize="10" fontWeight="bold" fontFamily="sans-serif">
                   {lang === 'en' ? "SponsorBlock & Ads Guarded" : "বিজ্ঞাপন ও স্পন্সর ব্লক সক্রিয়"}
                 </text>
-                <text x="50" y="39" fill="var(--text-secondary)" fontSize="8" fontFamily="sans-serif">
+                <text x="50" y="39" fill="#94a3b8" fontSize="8" fontFamily="sans-serif">
                   {lang === 'en' ? "Total Ads Blocked: 4,892" : "মোট ব্লক করা বিজ্ঞাপন: ৪,৮৯২ টি"}
                 </text>
               </g>
-
+ 
               {/* Subscriptions Feed List Mockup */}
               <g transform="translate(14, 396)">
                 <rect width="292" height="186" fill="#050508" rx="8" />
@@ -172,25 +172,25 @@ export default function Hero({ lang, triggerDownload }: HeroProps) {
                 <circle cx="28" cy="54" r="11" fill="#ff4b2b" />
                 <text x="25" y="58" fill="#ffffff" fontSize="9" fontWeight="bold">T</text>
                 <rect x="48" y="47" width="100" height="5" rx="2.5" fill="#ffffff" />
-                <rect x="48" y="56" width="60" height="3" rx="1.5" fill="var(--text-secondary)" opacity="0.6" />
+                <rect x="48" y="56" width="60" height="3" rx="1.5" fill="#94a3b8" opacity="0.6" />
                 <rect x="216" y="44" width="58" height="18" rx="9" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
-                <text x="224" y="55" fill="var(--text-secondary)" fontSize="7" fontWeight="bold">Subscribed</text>
-
+                <text x="224" y="55" fill="#94a3b8" fontSize="7" fontWeight="bold">Subscribed</text>
+ 
                 {/* Channel item 2 */}
                 <circle cx="28" cy="94" r="11" fill="#00f2fe" />
                 <text x="25" y="98" fill="#050508" fontSize="9" fontWeight="bold">M</text>
                 <rect x="48" y="87" width="110" height="5" rx="2.5" fill="#ffffff" />
-                <rect x="48" y="96" width="70" height="3" rx="1.5" fill="var(--text-secondary)" opacity="0.6" />
+                <rect x="48" y="96" width="70" height="3" rx="1.5" fill="#94a3b8" opacity="0.6" />
                 <rect x="216" y="84" width="58" height="18" rx="9" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
-                <text x="224" y="95" fill="var(--text-secondary)" fontSize="7" fontWeight="bold">Subscribed</text>
-
+                <text x="224" y="95" fill="#94a3b8" fontSize="7" fontWeight="bold">Subscribed</text>
+ 
                 {/* Channel item 3 */}
                 <circle cx="28" cy="134" r="11" fill="#9d4edd" />
                 <text x="25" y="138" fill="#ffffff" fontSize="9" fontWeight="bold">A</text>
                 <rect x="48" y="127" width="90" height="5" rx="2.5" fill="#ffffff" />
-                <rect x="48" y="136" width="50" height="3" rx="1.5" fill="var(--text-secondary)" opacity="0.6" />
+                <rect x="48" y="136" width="50" height="3" rx="1.5" fill="#94a3b8" opacity="0.6" />
                 <rect x="216" y="124" width="58" height="18" rx="9" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5" />
-                <text x="224" y="135" fill="var(--text-secondary)" fontSize="7" fontWeight="bold">Subscribed</text>
+                <text x="224" y="135" fill="#94a3b8" fontSize="7" fontWeight="bold">Subscribed</text>
               </g>
             </svg>
           </div>

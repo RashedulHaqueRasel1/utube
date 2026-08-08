@@ -67,12 +67,12 @@ export default function Home() {
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div className="relative w-full min-h-screen overflow-x-hidden">
       {/* Premium Ambient Background Glow Blobs */}
-      <div className="glow-blob glow-blob-red" style={{ top: '2%', left: '-12%' }} />
-      <div className="glow-blob glow-blob-blue" style={{ top: '15%', right: '-15%' }} />
-      <div className="glow-blob glow-blob-red" style={{ top: '55%', left: '10%' }} />
-      <div className="glow-blob glow-blob-blue" style={{ bottom: '5%', right: '5%' }} />
+      <div className="absolute rounded-full blur-[90px] pointer-events-none z-0 mix-blend-screen bg-[radial-gradient(circle,rgba(255,31,67,0.15)_0%,transparent_70%)] w-[400px] h-[400px] animate-pulse-blob top-[2%] left-[-12%]" />
+      <div className="absolute rounded-full blur-[90px] pointer-events-none z-0 mix-blend-screen bg-[radial-gradient(circle,rgba(0,242,254,0.12)_0%,transparent_70%)] w-[350px] h-[350px] animate-pulse-blob-reverse top-[15%] right-[-15%]" />
+      <div className="absolute rounded-full blur-[90px] pointer-events-none z-0 mix-blend-screen bg-[radial-gradient(circle,rgba(255,31,67,0.15)_0%,transparent_70%)] w-[400px] h-[400px] animate-pulse-blob top-[55%] left-[10%]" />
+      <div className="absolute rounded-full blur-[90px] pointer-events-none z-0 mix-blend-screen bg-[radial-gradient(circle,rgba(0,242,254,0.12)_0%,transparent_70%)] w-[350px] h-[350px] animate-pulse-blob-reverse bottom-[5%] right-[5%]" />
 
       {/* Navigation Bar */}
       <Navbar lang={lang} setLang={setLang} />

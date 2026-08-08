@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# uTube Premium - Next-Gen Android Client Landing Page
 
-## Getting Started
+A premium, responsive, high-performance, and bilingual (English/Bengali) landing page built using **Next.js 16 (App Router)** and **TypeScript** for the official release, distribution, and feature showcase of the custom **uTube Premium Android App**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 Key Features of the App Shown
+
+- **🚫 Zero Ads (বিজ্ঞাপন-মুক্ত)**: Complete ad-blocking capability for both videos and sponsor segments.
+- **🎧 Background Play (ব্যাকগ্রাউন্ড প্লে)**: Keep audio/video running even when screen is locked or while using other apps.
+- **🔄 Gmail Sync (জিমেইল কানেকশন)**: Official subscription and account synchronization via the Vanced MicroG companion app.
+- **✨ Safe & Secure**: Validated build signatures with direct checksum integrity.
+
+---
+
+## 🚀 Key Landing Page Features
+
+- **📱 Animated Interactive Mockups**: Features a custom-built, responsive SVG phone simulator showing real-time background play equalizer visualizers, subscriber feeds, and safe-ad shield indicators.
+- **🌍 Centralized Bilingual Localization**: Complete support for both **English (EN)** and **Bengali (BN)**, controlled using client-side react states.
+- **💾 Interactive Download Simulator**: High-fidelity download overlay showing active progress percentages for the main Client APK and Companion MicroG packages.
+- **📊 Release Version Hub**: Sortable and filterable table displaying stable, beta, and legacy releases with built-in changelogs and download endpoints.
+- **⚙️ Custom Glassmorphic Styling**: Developed entirely with CSS variables (HSL color spaces), custom responsive grid structures, and backdrop filters without any Tailwind dependency bloat.
+
+---
+
+## 📂 Project Architecture
+
+```
+src/
+├── app/
+│   ├── globals.css          # Design system tokens, variables, keyframe animations, and utilities
+│   ├── layout.tsx           # Layout wrapper with SEO title tags, meta descriptions, and viewport details
+│   └── page.tsx             # Main page container
+├── components/
+│   ├── Home.tsx             # Main orchestrator (keeps state for download timelines, active language, modals)
+│   ├── Navbar.tsx           # Responsive header navbar with language-toggles and mobile drawer
+│   ├── Hero.tsx             # Intro banners, badges, quick statistics, and SVG mockups
+│   ├── FeatureMatrix.tsx    # Responsive grid exhibiting app features
+│   ├── InstallGuide.tsx     # 3-Step interactive tabs demonstrating MicroG and client configurations
+│   ├── VersionHub.tsx       # Releases logs table with filters (Stable/Beta/All)
+│   ├── FaqAccordion.tsx     # Animated sliding FAQ accordion cards
+│   ├── Footer.tsx           # Disclaimers, copyright details, and community telegram/discord targets
+│   └── DownloadModal.tsx    # Overlay presenting download progress bars
+└── utils/
+    └── translations.ts      # Multi-lingual translations dictionary and releases data
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Local Development & Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ensure you have **Node.js** and **PNPM** installed.
 
-## Learn More
+### 1. Install Dependencies
+```bash
+pnpm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Run the Development Server
+```bash
+pnpm dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Production Build
+To build and check TypeScript type safety and compile optimization:
+```bash
+pnpm build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License & Disclaimer
+This is an unofficial landing page demonstrating custom Android mod concepts. All trademarks of YouTube and Google are owned by their respective copyright holders.
